@@ -5,52 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Archive</title>
-
-    <!-- bootstrap v5.1 css  -->
-
+    <!-- Bootstrap v5.1 Css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+    <!-- inline css  -->
+    <style>
+      #result,
+      #total-search,
+      #write,
+      #spiners {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1 class="text-center m-5">Welcome to Book Archive</h1>
-      <section class="mx-auto container">
-        <div class="input-group mb-3 container w-50">
-          <input
-            id="search-input"
-            type="text"
-            class="form-control"
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
-            aria-describedby="button-addon2"
-          />
-          <button
-            id="search-button"
-            class="btn btn-outline-primary fw-bold"
-            type="button"
-            id="button-addon2"
-          >
-            Search
-          </button>
-        </div>
-      </section>
+    <header class="container mt-5">
+      <h1 class="text-center fs-2 mt-3 text-primary">
+        Welcome To Book Archive
+      </h1>
+      <!-- input area  -->
+      <div class="input-group my-5 container w-50">
+        <input
+          id="input-field"
+          type="text"
+          class="form-control p-2"
+          placeholder="Enter a book name"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+
+        <!-- search button  -->
+        <button
+          class="btn btn-outline-primary fw-bold"
+          type="button"
+          id="button"
+        >
+          Search
+        </button>
+      </div>
     </header>
-    <main></main>
 
-    <!-- bootstrap js  -->
+    <main class="container">
+      <!--Spiners -->
+      <div class="d-flex justify-content-center">
+        <div id="spiners" class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+      <!-- Total -->
+      <div id="total-search">
+        <h4 class="text-primary">
+          Total item found : <span id="total" class="text-info"> </span>
+        </h4>
+      </div>
+
+      <!-- Books-->
+      <div
+        id="books"
+        class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-3"
+      ></div>
+
+      <!-- write -->
+      <div>
+        <h3 id="write" class="text-danger text-center">Write a book name!!!</h3>
+      </div>
+
+      <!--  Result not Found-->
+      <div class="">
+        <h3 id="result" class="text-center text-danger" style="display: none">
+          Result not found
+        </h3>
+      </div>
+    </main>
 
     <!-- custom js  -->
-
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
